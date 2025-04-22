@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>车辆热失控预警平台</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<link rel="stylesheet" href="css/comon0.css">
+</head>
+<body>
+<div class="loading">
+  <div class="loadbox"> <img src="images/loading.gif"> 页面加载中... </div>
+</div>
+<div class="head">
+  <h1>车辆热失控预警平台</h1>
+  <div class="time" id="showTime">2019/11/29 0:12:42</div>
+		<script>
+var t = null;
+    t = setTimeout(time,1000);//開始运行
+    function time()
+    {
+       clearTimeout(t);//清除定时器
+       dt = new Date();
+		var y=dt.getFullYear();
+		var mt=dt.getMonth()+1;
+		var day=dt.getDate();
+       var h=dt.getHours();//获取时
+       var m=dt.getMinutes();//获取分
+       var s=dt.getSeconds();//获取秒
+		var t = null;
+       document.getElementById("showTime").innerHTML = y+"/"+Appendzero(mt)+"/"+Appendzero(day)+" "+Appendzero(h)+":"+Appendzero(m)+":"+Appendzero(s)+"";
+        function Appendzero(obj){
+			if(obj<10) return "0" +""+ obj;
+			else return obj;
+		 }
+		t = setTimeout(time,1000); //设定定时器，循环运行     
+    } 
+
+</script>
+	
+</div>
+<div class="mainbox">
+  <ul class="clearfix">
+    <li>
+      <div class="boxall" style="height: calc(40% - .15rem)">
+        <div class="alltitle">发生热失控数量 </div>
+        <div class="sycm">
+          <ul class="clearfix">
+            <li>
+              <h2>46</h2>
+              <span>华东地区</span></li>
+            <li>
+              <h2>140</h2>
+              <span>华西地区</span></li>
+            <li>
+              <h2>65</h2>
+              <span>华南地区</span></li>
+         
+            <li>
+              <h2>29</h2>
+              <span>华北地区</span></li>
+           
+          </ul>
+        </div>
+        <div class="boxfoot"></div>
+      </div>
+      <div class="boxall" style="height: calc(60% - .15rem)">
+        <div class="alltitle">报警车辆信息</div>
+   <div class="sycm sycm2">
+          <ul class="clearfix">
+            <li>
+              <h2>170km/h</h2>
+              <span>最快时速</span></li>
+            <li>
+              <h2>320V</h2>
+              <span>最大电压</span></li>
+            <li>
+              <h2>400km</h2>
+              <span>最大里程</span></li>
+         
+            <li>
+              <h2>160℃</h2>
+              <span>最高电池温度</span></li>
+           <li>
+              <h2>故障保护状态</h2>
+              <span>电池运行状态</span></li>
+         
+            <li>
+              <h2>500A</h2>
+              <span>最大电流</span></li>
+           
+          </ul>
+        </div>
+        <div class="boxfoot"></div>
+      </div>
+      
+    </li>
+    <li>
+     <div style="position: relative">
+		<div class="barnav">
+			
+			 <div class="bar">
+        <div class="barbox">
+          <ul class="clearfix">
+            <li class="pulll_left counter">10000</li>
+            <li class="pulll_left counter">6600</li>
+            <li class="pulll_left counter">121</li>
+          </ul>
+        </div>
+        <div class="barbox2">
+          <ul class="clearfix">
+            <li class="pulll_left">当前观察(辆)</li>
+            <li class="pulll_left">测试车辆(辆)</li>
+            <li class="pulll_left">热失控车辆(辆)</li>
+          </ul>
+        </div>
+		  
+      </div>
+		</div>
+		 </div>
+      <div class="mapbox">
+		<div class="map">
+        <div class="map1"><img src="images/lbx.png"></div>
+        <div class="map2"><img src="images/jt.png"></div>
+        <div class="map3"><img src="images/map.png"></div>
+        <div class="map4" id="map_1"></div>
+      </div>
+		</div>
+    </li>
+    <li>
+      
+		<div class="boxall" style="height: calc(50% - .15rem)">
+        <div class="alltitle">报警并及时反馈车辆 <div class="pulll_right">
+			<a href="#"><span></span>及时反馈</a>
+			<a href="#"><span></span>未及时反馈</a>
+			</div></div>
+        
+        <div class="boxnav" id="echart3"></div>
+        
+        <div class="boxfoot"></div>
+      </div>
+      <div class="boxall" style="height: calc(50% - .15rem)">
+        <div class="alltitle"></div>
+        <div class="wrap boxnav">
+          <ul>
+            <li><p><span>可正常行驶</span><span>宁夏</span><span>发出预警</span></p></li>
+            <li><p><span>需要驾驶员限制行驶</span><span> 重庆</span><span>发出预警</span></p></li>
+            <li><p><span>需停车处理</span><span>贵州</span><span>发出预警</span></p></li>
+            <li><p><span>可正常行驶</span><span>重庆</span><span>发出预警</span></p></li>
+            <li><p><span>可正常行驶</span><span>重庆</span><span>发出预警</span></p></li>
+ 	   <li><p><span>可正常行驶</span><span>贵州</span><span>发出预警</span></p></li>
+           <li><p><span>需停车处理</span><span>重庆</span><span>发出预警</span></p></li>
+           
+          </ul>
+        </div>
+        <div class="boxfoot"></div>
+      </div>
+    </li>
+  </ul>
+  <div class="copyright">预警平台</div>
+</div>
+	
+	<div class="mainbox2">
+  <ul class="clearfix">
+    <li>
+		
+		<div class="boxall" style="height: 100%">
+        <div class="alltitle">单体电池温度超温报警			<div class="pulll_right">
+			<a href="#"><span></span>报警</a>
+			<a href="#"><span></span>正常</a>
+			</div>
+			</div>
+       <div class="boxnav">
+		  <ul class="btbox">
+		   <li id="bt01"></li>
+		   <li id="bt02"></li>
+		   <li id="bt03"></li>
+		   <li id="bt04"></li>
+		   </ul>
+		  </div>
+        <div class="boxfoot"></div>
+      </div>
+		
+    </li>
+	  <li>
+		  <div class="boxall" style="height:100%">
+        <div class="alltitle">电流监控
+			  <div class="pulll_right sebtn" >
+			<a href="#" class="active">近七天</a>
+			<a href="#">近30天</a>
+			<a href="#">12月</a>
+			</div>
+			  </div>
+         <div class="boxnav" id="echart4"></div>
+        
+        
+        <div class="boxfoot"></div>
+      </div>
+	  </li>
+	  
+		</ul>
+		</div>
+
+<script language="JavaScript" src="js/js.js"></script> 
+<script type="text/javascript" src="js/echarts.min.js"></script> 
+<script type="text/javascript" src="js/china.js"></script> 
+<script type="text/javascript" src="js/area_echarts.js"></script> 
+<script src="js/jquery.liMarquee.js"></script> 
+<script>
+$(function(){
+	$('.wrap,.adduser').liMarquee({
+		direction: 'up',//身上滚动 
+		runshort: false,//内容不足时不滚动
+		scrollamount: 20//速度
+	});
+});
+	
+</script> 
+
+
+<script type="text/javascript">
+		$('.counter').countUp();
+  </script>
+</body>
+</html
